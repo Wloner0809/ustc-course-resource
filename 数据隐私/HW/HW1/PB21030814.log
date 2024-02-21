@@ -1,0 +1,456 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.5)  5 NOV 2023 22:52
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**PB21030814
+(./PB21030814.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-01>
+(d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-10-27 v7.01d Hypertext links for LaTeX
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-10-05 v2.54 Cross-referencing by name of section
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count190
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count191
+)
+\@linkdim=\dimen141
+\Hy@linkcounter=\count192
+\Hy@pagecounter=\count193
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-10-27 v7.01d Hyperref: PDFDocEncoding definition (HO)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count194
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-10-27 v7.01d Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4051.
+Package hyperref Info: Hyper figures OFF on input line 4168.
+Package hyperref Info: Link nesting OFF on input line 4173.
+Package hyperref Info: Hyper index ON on input line 4176.
+Package hyperref Info: Plain pages OFF on input line 4183.
+Package hyperref Info: Backreferencing OFF on input line 4188.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4435.
+\c@Hy@tempcnt=\count195
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4773.
+\XeTeXLinkMargin=\dimen142
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count196
+\Field@Width=\dimen143
+\Fld@charsize=\dimen144
+Package hyperref Info: Hyper figures OFF on input line 6052.
+Package hyperref Info: Link nesting OFF on input line 6057.
+Package hyperref Info: Hyper index ON on input line 6060.
+Package hyperref Info: backreferencing OFF on input line 6067.
+Package hyperref Info: Link coloring ON on input line 6070.
+Package hyperref Info: Link coloring with OCG OFF on input line 6077.
+Package hyperref Info: PDF/A mode OFF on input line 6082.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count197
+\c@Item=\count198
+\c@Hfootnote=\count199
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2023-10-27 v7.01d Hyperref driver for XeTeX
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\pdfm@box=\box51
+\c@Hy@AnnotLevel=\count266
+\HyField@AnnotCount=\count267
+\Fld@listcount=\count268
+\c@bookmark@seq@number=\count269
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip50
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 149.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip51
+\f@nch@O@elh=\skip52
+\f@nch@O@erh=\skip53
+\f@nch@O@olh=\skip54
+\f@nch@O@orh=\skip55
+\f@nch@O@elf=\skip56
+\f@nch@O@erf=\skip57
+\f@nch@O@olf=\skip58
+\f@nch@O@orf=\skip59
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip60
+\enit@outerparindent=\dimen145
+\enit@toks=\toks18
+\enit@inbox=\box52
+\enit@count@id=\count270
+\enitdp@description=\count271
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
+
+
+LaTeX Warning: Command \underbar  has changed.
+               Check if current package is valid.
+
+
+LaTeX Warning: Command \underline  has changed.
+               Check if current package is valid.
+
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count272
+\float@exts=\toks19
+\float@box=\box53
+\@float@everytoks=\toks20
+\@floatcapt=\box54
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks21
+\c@algorithm=\count273
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count274
+\c@ALC@line=\count275
+\c@ALC@rem=\count276
+\c@ALC@depth=\count277
+\ALC@tlm=\skip61
+\algorithmicindent=\skip62
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip63
+
+For additional information on amsmath, use the `?' option.
+(d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen146
+)) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen147
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count278
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count279
+\leftroot@=\count280
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count281
+\DOTSCASE@=\count282
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen148
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count283
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count284
+\dotsspace@=\muskip17
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
+\tag@help=\toks23
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
+\andhelp@=\toks24
+\eqnshift@=\dimen149
+\alignsep@=\dimen150
+\tagshift@=\dimen151
+\tagwidth@=\dimen152
+\totwidth@=\dimen153
+\lineht@=\dimen154
+\@envbody=\toks25
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen157
+\captionmargin=\dimen158
+\caption@leftmargin=\dimen159
+\caption@rightmargin=\dimen160
+\caption@width=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen165
+\ar@mcellbox=\box57
+\extrarowheight=\dimen166
+\NC@list=\toks27
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box58
+)
+\everycr=\toks28
+\minrowclearance=\skip68
+\rownum=\count292
+) (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2023-10-23 L3 backend support: XeTeX
+\g__graphics_track_int=\count293
+\l__pdf_internal_box=\box59
+\g__pdf_backend_object_int=\count294
+\g__pdf_backend_annotation_int=\count295
+\g__pdf_backend_link_int=\count296
+) (./PB21030814.aux)
+\openout1 = `PB21030814.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+Package hyperref Info: Link coloring ON on input line 30.
+ (./PB21030814.out) (./PB21030814.out)
+\@outlinefile=\write3
+\openout3 = `PB21030814.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+ (d:/app/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./PB21030814.toc)
+\tf@toc=\write4
+\openout4 = `PB21030814.toc'.
+
+ [1
+
+]
+File: pics/pic1.jpg Graphic file (type bmp)
+<pics/pic1.jpg>
+File: pics/pic2.jpg Graphic file (type bmp)
+<pics/pic2.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+File: pics/pic5.png Graphic file (type bmp)
+<pics/pic5.png>
+
+Overfull \hbox (44.02907pt too wide) in paragraph at lines 169--174
+\TU/lmr/m/n/12 Since table T satisfies entropy l-diversity, we have $\OML/cmm/m/it/12 entropy\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 entropy\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ^^U
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+File: pics/pic3.png Graphic file (type bmp)
+<pics/pic3.png>
+File: pics/pic4.PNG Graphic file (type bmp)
+<pics/pic4.PNG>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7] (./PB21030814.aux)
+ ***********
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-01>
+ ***********
+Package rerunfilecheck Info: File `PB21030814.out' has not changed.
+(rerunfilecheck)             Checksum: 5BC32D19DFC63523E1764BF9B4777EAD;954.
+ ) 
+Here is how much of TeX's memory you used:
+ 11485 strings out of 474929
+ 184868 string characters out of 5759768
+ 1938164 words of memory out of 5000000
+ 33311 multiletter control sequences out of 15000+600000
+ 566414 words of font info for 81 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 72i,11n,79p,258b,360s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on PB21030814.pdf (7 pages).

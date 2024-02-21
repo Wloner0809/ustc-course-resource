@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+\title{\textbf{DataPrivacy—hw3}}
+\author{\textbf{Terence Wang}}% 作者
+\date{\textbf{2023/01/20}}% 日期
+\usepackage[colorlinks=true]{hyperref}  % 为文档中的章节引用自动添加链接
+\usepackage{color}% 调用颜色宏包
+\setlength{\parindent}{4em} %设置首行缩进
+\usepackage{fancyhdr} %页眉、页脚
+\usepackage{enumitem}
+\usepackage{sectsty}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\bfseries DataPrivacy—hw} %页眉内容
+\lfoot{\bfseries WANGYU} %页脚内容
+\cfoot{\bfseries PB21030814} %页脚内容
+\rfoot{\thepage} %在页脚处给出页码
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath, amsfonts}
+\usepackage{graphicx} %插入图片
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{129,20,83}
+\lstset {
+    language=C,
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    numbers=left,
+    %upquote=true,
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{red},
+    % basicstyle=\small\ttfamily, % basic font setting
+    emph={int,char,double,float,unsigned,void,bool},
+    emphstyle={\color{blue}},
+    escapechar=\&,
+    % keyword highlighting
+    classoffset=1, % starting new class
+    otherkeywords={>,<,.,;,-,!,=,~},
+    morekeywords={>,<,.,;,-,!,=,~},
+    keywordstyle=\color{weborange},
+    classoffset=0,
+}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Q1}
+\subsection{a}
+\begin{table}[h]
+    \centering
+    \caption{the inverse permutation $\pi^{-1}$}\label{tab:tab1}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$           & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\hline
+        $\pi^{-1}(x)$ & 2 & 4 & 6 & 1 & 8 & 3 & 5 & 7 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{b}
+\textbf{ciphertext:}
+\newline
+TGEEMNEL\quad NNTDROEO\quad AAHDOETC\quad SHAEIRLM
+\newline
+\textbf{plaintext:}
+\newline
+GENTLEME\quad NDONOTRE\quad ADEACHOT\quad HERSMAIL
+\newline
+\newline
+So the result:\textbf{GENTLEMENDONOTREADEACHOTHERSMAIL}. (GENTLEMEN DONOT READ EACH OTHERS MAIL)
+
+\section{Q2}
+\subsection{a}
+\textbf{Use Shannon's Theorem:}
+\newline
+\newline
+Since the key is chosen uniformly at random, \textbf{the Latin square cipher} satisfies \textbf{1.Every key i$\in$K is chosen with equal probability$\frac{1}{|K|}$}.
+\newline
+\newline
+Therefore, we just need to prove that \textbf{the Latin square cipher} satisfies \textbf{2.For every j$\in$M and every L(i,j)$\in$C, there exists a single key such that i$\in$K outputs L(i,j)}.
+\newline
+\newline
+According to the definition of \textbf{n-th order Latin square}: each of the n intergers $1,2,\cdots,n$ occurs exactly once in each row and each column of L, we can conclude that for a given j$\in$M and a given L(i,j)$\in$C, there exists a single corresponding key i$\in$K.Thus, \textbf{the Latin square cipher} satisfies \textbf{2.For every j$\in$M and every L(i,j)$\in$C, there exists a single key such that i$\in$K outputs L(i,j)}.
+\subsection{b}
+Let us assume that $|M|=|C|=|K|=n$, $M=\{m_1,m_2,\cdots,m_n\}$, $C=\{c_1,c_2,\cdots,c_n\}$, $K=\{k_1,k_2,\cdots,k_n\}$. Since the cipher has perfect secrecy, we can conclude:
+\begin{enumerate}
+    \item Every key k$\in$K is chosen with equal probability $\frac{1}{|K|}=\frac{1}{n}$.
+    \item For every m$\in$M and every c$\in$C, there exists a single key k$\in$K such that $e_k(m)=c$.(This property means: for every $m$ and $k$, there exists a single corresponding $c$; for every $c$ and $k$, there exists a single corresponding $m$)
+\end{enumerate}
+\textbf{Every k$\in$K appears exactly once} for a given c$\in$C and every m$\in$M, such that $e_k(m)=c$. Otherwise, if there exists $m_1$ and $m_2$ use the same key $k$ to encrypt and get $c$, then $c$ can not be decrypted correctly. Since $|M|=|C|=|K|=n$, for a given $c$, different $k$ is needed to encrypt every $m$. Therefore, all of the $k\in K$ are used and each is used exactly once.
+\newline
+The number of $c\in C$ is $n$. For a given $m$, all of the $k\in K$(\textbf{number: n}) is needed to get different $c\in C$(\textbf{number:n}). Otherwise, there exist $k_1$ and $k_2$ such that $e_{k_1}(m)=e_{k_2}(m)=c$. In this circumstance, we can not get all of the $c\in C$(\textbf{i.e. the number of c is less than n}). This contradicts to the definition of \textbf{perfect secrecy}.
+\newline
+Therefore, $m$, $k$, $c$ correspond with each other exactly. So $\forall c\in C$, $Pr=\sum\limits_{i\in M}P(m=i)\times P(e_k(m)=c)=n\times \frac{1}{n}\times \frac{1}{n}=\frac{1}{n}$. We can conclude that each ciphertext is equiprobable.
+\section{Q3}
+\subsection{a}
+$n=p\times q=11413$, $\phi(n)=(p-1)\times(q-1)=11200$. Since $gcd(pub, \phi(n))=gcd(pub, 11200)=1$, we can conclude that \textbf{3839} public keys can be chosen.
+\newline
+The code used to calculate the number of public keys is as follows:
+\newline
+\begin{lstlisting}
+#include <stdio.h>
+int gcd(int a, int b)
+{
+    return b == 0 ? a : gcd(b, a % b);
+}
+int main()
+{
+    int cnt = 0;
+    for (int i = 2; i < 11200; i++)
+    {
+        if (gcd(i, 11200) == 1)
+        {
+            cnt++;
+        }
+    }
+    printf("%d\n", cnt);
+    return 0;
+}
+\end{lstlisting}
+\subsection{b}
+$e=3533$, $n=11413$, $M=9726$ then we can get $c=M^e\mod n=9726^{3533}\mod 11413=5761$
+\newline
+The code used to calculate the ciphertext is as follows:
+\newline
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 11413
+#define E 3533
+const long long int N = 9726;
+int main()
+{
+    long long int result = N;
+    for (int i = 1; i < E; i++)
+    {
+        result = result * N % MAX;
+    }
+    printf("%lld\n", result);
+    return 0;
+}
+\end{lstlisting}
+Since $e\times d\equiv 1\mod\phi(n)$, we have $3533\times d\equiv 1\mod 11200$. Thus we can get $d=6597$
+\newline
+The code used to calculate $d$ is as follows:
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 11200
+#define E 3533
+int main()
+{
+    long long int d = 1;
+    while (d * E % MAX != 1)
+        d++;
+    printf("%lld\n", d);
+    return 0;
+}
+\end{lstlisting}
+$M=c^d\mod n=5761^{6597}\mod 11413=9726$
+\newline
+The code used to calculate $M$ is as follows:
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 11413
+#define D 6597
+const long long int c = 5761;
+int main()
+{
+    long long int result = c;
+    for (int i = 1; i < D; i++)
+    {
+        result = (result * c) % MAX;
+    }
+    printf("%lld\n", result);
+    return 0;
+}
+\end{lstlisting}
+\subsection{c}
+Since p and q are prime numbers, we can get $\phi(n)=(p-1)\times(q-1)=p\times q-p-q+1=n-p-q+1$.
+$\rightarrow \begin{cases} p\times q=n\\ n-p-q+1=\phi(n)\end{cases}\rightarrow \begin{cases} p\times q=n\\ p+q=n+1-\phi(n)\end{cases}$
+\newline
+Without loss of generality, let us assume that $p>q$, then we can get $p=\frac{n+1-\phi(n)+\sqrt{(n+1-\phi(n))^2-4n}}{2}$, $q=\frac{n+1-\phi(n)-\sqrt{(n+1-\phi(n))^2-4n}}{2}$.
+\newline
+Therefore, we can compute $p$ and $q$ in polynomial time.
+
+\section{Q4}
+\subsection{a}
+$n=p\times q=187$, $\lambda=lcm(p-1,q-1)=80$, $g=n+1=188$.
+$r=83$, $m=175$, $c=g^m\times r^n\mod n^2=(n+1)^m\times r^n\mod n^2$. Therefore, $c=23911$.
+\newline
+The code used to calculate $c$ is as follows:
+\begin{lstlisting}
+#include <stdio.h>
+#define N 187
+#define M 175
+#define R 83
+const long long int mod = N * N;
+int main()
+{
+    long long int n = N;
+    long long int r = R;
+    long long int result = n + 1;
+    for (int i = 1; i < M; i++)
+    {
+        result = (result * (n + 1)) % mod;
+    }
+    for (int i = 1; i <= N; i++)
+    {
+        result = (result * r) % mod;
+    }
+    printf("%lld\n", result);
+    return 0;
+}
+\end{lstlisting}
+\textbf{Proof of the Homomorphic addition property:}
+\begin{align*}
+    Decrypt((c_1\cdot c_2)\mod n^2) & = Decrypt((g^{m_1}\cdot r_1^n\cdot g^{m_2}\cdot r_2^n)\mod n^2) \\
+                                    & = Decrypt((g^{m_1+m_2}\cdot (r_1\cdot r_2)^n)\mod n^2)          \\
+                                    & = m_1+m_2
+\end{align*}
+\subsection{b}
+Let $z_i=x_i\oplus y_i$, $c_i=a_i\oplus b_i$. Since $x_1\oplus x_2\oplus x_3=0$ and $y_1\oplus y_2\oplus y_3=0$, we can get $z_1\oplus z_2\oplus z_3=0$.
+Observe that for every $i\in\{1,2,3\}$ it holds that $c_i=z_{i-1}\oplus(v_1\oplus v_2)$, where $i-1$ denotes $3$ when $i=1$. e.g. we have $c_1=a_1\oplus b_1=x_3\oplus v_1\oplus y_3\oplus v_2=(x_3\oplus y_3)\oplus(v_1\oplus v_2)=z_3\oplus(v_1\oplus v_2)$.
+Thus each $P_i$ locally computes $(z_i,c_i)$ and no communication is needed in order to compute a secret sharing of $v_1\oplus v_2$.
+
+\section{Q5}
+\subsection{a}
+\textbf{Interchangeable} means that the two libraries have the same effect on \textbf{all calling programs}, while \textbf{Indistinguishable} means that the two libraries are distinguishable if \textbf{all polynomial-time calling programs} have negligible advantage in distinguishing them.
+\newline
+\textbf{Interchangeable:} Let $\mathcal L_1$, $\mathcal L_2$ be two libraries with a common interface. $\mathcal L_1\equiv \mathcal L_2$ if for all programs $\mathcal A$ that output a single bit, $\Pr[\mathcal A\diamond \mathcal L_1\Rightarrow 1]=\Pr[\mathcal A\diamond \mathcal L_2\Rightarrow 1]$
+\newline
+\textbf{Indistinguishable:} Let $\mathcal L_{left}$, $\mathcal L_{right}$ be two libraries with a common interface. $\mathcal L_{left}\approx \mathcal L_{right}$ if for all polynomial-time programs $\mathcal A$ that output a single bit, $\Pr[\mathcal A\diamond \mathcal L_{left}\Rightarrow 1]\approx\Pr[\mathcal A\diamond \mathcal L_{right}\Rightarrow 1]$
+\subsection{b}
+For every polynomial function $p(\lambda)$:
+\newline
+(1)$\lim\limits_{\lambda\rightarrow\infty}\frac{p(\lambda)}{2^{\frac{\lambda}{2}}}=0$
+\newline
+(2)$\lim\limits_{\lambda\rightarrow\infty}\frac{\lambda^4}{2^{\log(\lambda^2)}}=\lim\limits_{x\rightarrow\infty}\frac{x^2}{2^{\log x}}=\lim\limits_{x\rightarrow\infty}x=\infty$
+\newline
+(3)$\lim\limits_{\lambda\rightarrow\infty}\frac{p(\lambda)}{\lambda^{\log(\lambda)}}=\lim\limits_{\lambda\rightarrow\infty}\lambda^{C-\log(\lambda)}=0$
+\newline
+(4)$\lim\limits_{\lambda\rightarrow\infty}\frac{\lambda^3}{\lambda^2}=\lim\limits_{\lambda\rightarrow\infty}\lambda=\infty$
+\newline
+(5)$\lim\limits_{\lambda\rightarrow\infty}\frac{p(\lambda)}{2^{(\log \lambda)^2}}=0$
+\newline
+(6)$\lim\limits_{\lambda\rightarrow\infty}\frac{\lambda^2}{(\log \lambda)^2}=\lim\limits_{t\rightarrow\infty}\frac{(2^t)^2}{t^2}=\infty$
+\newline
+(7)$\lim\limits_{\lambda\rightarrow\infty}\frac{\lambda}{\lambda^\frac{1}{\lambda}}=\lim\limits_{\lambda\rightarrow\infty}\lambda^{1-\frac{1}{\lambda}}=\infty$
+\newline
+(8)$\lim\limits_{\lambda\rightarrow\infty}\frac{\lambda}{\sqrt{\lambda}}=\lim\limits_{\lambda\rightarrow\infty}\sqrt{\lambda}=\infty$
+\newline
+(9)$\lim\limits_{\lambda\rightarrow\infty}\frac{p(\lambda)}{2^{\sqrt{\lambda}}}=0$
+\newline
+Therefore, (1)\quad (3)\quad (5)\quad (9) are negligible functions in $\lambda$.
+\subsection{c}
+\subsubsection{}
+\textbf{Proof:}
+\newline
+Since $f$ and $g$ are negligible, we can get $\lim\limits_{\lambda\rightarrow\infty}f(\lambda)\cdot p(\lambda)=0$, $\lim\limits_{\lambda\rightarrow\infty}g(\lambda)\cdot p(\lambda)=0$. Thus
+$\lim\limits_{\lambda\rightarrow\infty}(f+g)(\lambda)\cdot p(\lambda)=\lim\limits_{\lambda\rightarrow\infty}f(\lambda)\cdot p(\lambda)+\lim\limits_{\lambda\rightarrow\infty}g(\lambda)\cdot p(\lambda)=0$.
+So we can conclude that $f+g$ is negligible.
+\subsubsection{}
+\textbf{Proof:}
+\newline
+Since $f$ and $g$ are negligible, we can get $\lim\limits_{\lambda\rightarrow\infty}f(\lambda)\cdot p(\lambda)=0$, $\lim\limits_{\lambda\rightarrow\infty}g(\lambda)\cdot p(\lambda)=0$. Thus
+$\lim\limits_{\lambda\rightarrow\infty}(f\cdot g)(\lambda)\cdot p(\lambda)=\lim\limits_{\lambda\rightarrow\infty}f(\lambda)\cdot p(\lambda)\cdot\lim\limits_{\lambda\rightarrow\infty}g(\lambda)\cdot p(\lambda)=0$.
+So we can conclude that $f\cdot g$ is negligible.
+\subsubsection{}
+\textbf{Counterexample:}
+\newline
+Let $f(\lambda)=\frac{1}{2^{\frac{\lambda}{2}}}$, $g(\lambda)=\frac{1}{2^\lambda}$. Apparently, $f$ and $g$ are negligible. However, $\frac{f(\lambda)}{g(\lambda)}=2^{\frac{\lambda}{2}}$ and $\lim\limits_{\lambda\rightarrow\infty}2^\frac{\lambda}{2}\cdot p(\lambda)=\infty$.
+\newline
+So we can conclude that $\frac{f(\lambda)}{g(\lambda)}$ is not negligible.
+
+
+\end{document}

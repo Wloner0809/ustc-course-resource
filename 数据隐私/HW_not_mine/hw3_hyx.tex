@@ -1,0 +1,221 @@
+\documentclass{ctexart}
+\usepackage{amsmath,bm}
+\usepackage{setspace}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsfonts,amssymb}
+\usepackage[a4paper,scale=0.8]{geometry}
+\usepackage{hyperref}
+\usepackage{pythonhighlight}
+\usepackage{float}
+\usepackage{amsthm}
+\renewcommand\tablename{Table}
+\newenvironment{solution}{\begin{proof}[\indent\bf Solution]}{\end{proof}}
+\renewcommand{\proofname}{\indent\bf Proof}
+\setCJKmainfont{华光书宋_CNKI}
+\newCJKfontfamily\kaiti{华光楷体_CNKI}
+\newCJKfontfamily\hei{华光黑体_CNKI}
+\newCJKfontfamily\fsong{华光仿宋_CNKI}
+\newfontfamily\code{Courier New}
+\linespread{1.5} \setlength\parindent{2 em}
+\title{\Huge 中国科学技术大学计算机学院\\《数据隐私的方法伦理和实践》作业}
+\date{\LARGE 2021.06.06}
+\begin{document}
+\begin{hei}  \maketitle\end{hei}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{USTC.png}
+
+\end{figure}
+\begin{LARGE}\begin{align*}
+         & \text{学生姓名：\underline{胡毅翔}}     \\
+         & \text{学生学号：\underline{PB18000290}}\end{align*}\end{LARGE}
+\par
+\par\par
+\centerline{\large 计算机实验教学中心制}
+\par \centerline {\large 2019年9月}
+\newpage
+\section{\hei Concept of DP}
+\subsection{\hei}
+Prove that the Laplace mechanism preserves ($\epsilon$, 0)-DP.
+\par
+\begin{proof} Let $x \in \mathbb{N}^{|\mathcal{X}|}$ and $y \in \mathbb{N}^{|\mathcal{X}|}$ be such that $\|x-y\|_{1} \leq 1$, and let $f(\cdot)$ be some function $f: \mathbb{N}^{|\mathcal{X}|} \rightarrow \mathbb{R}^{k}$. Let $p_{x}$ denote the probability density function of $\mathcal{M}_{L}(x, f, \varepsilon)$, and let $p_{y}$ denote the probability density function of $\mathcal{M}_{L}(y, f, \varepsilon)$. We compare the two at some arbitrary point $z \in \mathbb{R}^{k}$
+    $$
+        \begin{aligned}
+            \frac{p_{x}(z)}{p_{y}(z)} & =\prod_{i=1}^{k}\left(\frac{\exp \left(-\frac{\varepsilon\left|f(x)_{i}-z_{i}\right|}{\Delta f}\right)}{\exp \left(-\frac{\varepsilon\left|f(y)_{i}-z_{i}\right|}{\Delta f}\right)}\right) \\
+                                      & =\prod_{i=1}^{k} \exp \left(\frac{\varepsilon\left(\left|f(y)_{i}-z_{i}\right|-\left|f(x)_{i}-z_{i}\right|\right)}{\Delta f}\right)                                                        \\
+                                      & \leq \prod_{i=1}^{k} \exp \left(\frac{\varepsilon\left|f(x)_{i}-f(y)_{i}\right|}{\Delta f}\right)                                                                                          \\
+                                      & =\exp \left(\frac{\varepsilon \cdot\|f(x)-f(y)\|_{1}}{\Delta f}\right)                                                                                                                     \\
+                                      & \leq \exp (\varepsilon)
+        \end{aligned}
+    $$
+    where the first inequality follows from the triangle inequality, and the last follows from the definition of sensitivity and the fact that $\|x-y\|_{1} \leq 1$. That $\frac{p_{x}(z)}{p_{y}(z)} \geq \exp (-\varepsilon)$ follows by symmetry.
+\end{proof}
+\subsection{}
+Please explain the difference between $(\epsilon, 0)-\mathrm{DP}$ and $(\epsilon, \delta)$ -DP. Typically, what range of $\delta$ we're interested in? Explain the reason.
+\par
+\begin{solution}
+    Even $\delta$ is negligible, there are theoretical distinctions between $(\varepsilon, 0)$ - and $(\varepsilon, \delta)$ - differential privacy.
+    \par $(\varepsilon, 0)$ -differential privacy: for every run of the mechanism $M(x)$, the output observed is (almost) equally likely to be observed on every neighboring database, simultaneously.
+    \par $(\varepsilon, \delta)$ - differential privacy: given an output $\xi \sim M(x)$ it may be possible to find a database $y$ such that $\xi$ is much more likely to be produced on $y$ than it is when the database is $x$.
+    The privacy loss (divergence) incurred by observation $\xi$ :
+    $$
+        \mathcal{L}_{\mathcal{M}(x) \| \mathcal{M}(y)}^{(\xi)}=\ln \left(\frac{\operatorname{Pr}[\mathcal{M}(x)=\xi]}{\operatorname{Pr}[\mathcal{M}(y)=\xi]}\right)
+    $$
+    \par $(\varepsilon, \delta)$ - differential privacy ensures that for all adjacent $x, y$, the absolute value of the privacy loss will be bounded by $\varepsilon$ with probability at least $1-\delta$.
+    \par
+    Typically, we are interested in values of $\delta$ that are less than the inverse
+    of any polynomial in the size of the database.
+    \par
+    Because, for each piece of data in data set, there is a probability that it will be released. Each piece of different data in this ralease is independent,
+    so this mechanism can release $n\delta$ sample. So in order to prevent such leakage, it must be less than $1/n$.
+
+\end{solution}
+\subsection{}
+Please explain the difference between DP and Local DP.
+\begin{solution}
+    Definition of $\epsilon$ -local differential privacy is that a randomized function $f$ satisfies $\epsilon$ local differential privacy if and only if for
+    any two input tuples $t$ and $t^{\prime}$ in the domain of $f$, and for any output $t^{*}$ of $f$, we have:
+    $$
+        \operatorname{Pr}\left[f(t)=t^{*}\right] \leq \exp (\epsilon) \cdot \operatorname{Pr}\left[f\left(t^{\prime}\right)=t^{*}\right]
+    $$
+    \begin{enumerate}
+        \item The notation $\operatorname{Pr}[\cdot]$ means probability. If $f$ 's output is continuous, $\operatorname{Pr}[\cdot]$ is replaced by the probability density function.
+        \item  Basically, local differential privacy is a special case of differential privacy where the random perturbation is performed by the users, not by the aggregator.
+        \item  According to the above definition, the aggregator, who receives the perturbed tuple $t$, cannot distinguish whether the true tuple is $t$ or another tuple $t^{\prime}$ with high confidence (controlled by parameter $\left.\epsilon\right)$, regardless of the background information of the aggregator.
+        \item This provides plausible deniability to the user.
+    \end{enumerate}
+    While the definition of differential privacy is that A randomized algorithm $M$ with domain $\mathbb{N}^{|X|}$ is $(\epsilon, \delta)$ -differentially private if for all $S \subset$ Range $(M)$ and for all $x, y \in \mathbb{N}|X|$ such that $\|x-y\|_{1} \leq 1$ :
+    $$
+        \operatorname{Pr}[M(x) \in S] \leq \exp (\epsilon) \operatorname{Pr}[M(y) \in S]+\delta
+    $$
+    where the probability space is over the coin flips of the mechanism $M$. If $\delta=0$, we say that $M$ is $\delta$ -differentially private.
+    \par We can find out the difference between LDP and DP is that
+    DP restrictions on tuple $x, y \in \mathbb{N}|X|$ such that $\|x-y\|_{1} \leq 1$, while LDP restrictions on any two input tuples $t$ and $t^{\prime}$.
+
+\end{solution}
+\section{Basics of DP}
+\begin{table}[H]\label{1}
+    \begin{tabular}{llllllll}\text { ID } & \text { Sex }       & \text { Chinese } & \text { Mathematics } & \text { English } &
+        \text { Physics }      & \text { Chemistry } & \text { Biology }                                               \\ 1 & \text { Male } & 96 & 58 & 80 & 53 & 56 & 100
+        \\ 2 & \text { Male } & 60 & 63 & 77 & 50 & 59 & 75 \\ 3 & \text { Female } & 83 & 86 & 98 & 69 & 80 & 100 \\ \ldots & & & & & & &
+        \\ 2000 & \text { Female } & 86 & 83 & 98 & 87 & 82 & 92\end{tabular}\caption{Scores of students in School A}
+\end{table}
+
+Table 1 is the database records scores of students in School A in the final exam. We need to help teacher query the database while protecting the privacy of students' scores. The domain of this database is
+$\{$ Male, Female $\} \times\{0,1,2, \ldots, 100\}^{6} .$
+In this question, assume that two inputs $X$ and $Y$ are neighbouring inputs if $X$ can be obtained from
+$Y$ by removing or adding one element. Answer the following questions.
+\subsection{}
+What is the sensitivity of the following queries:
+\begin{enumerate}\item $q_{1}=\frac{1}{2000} \sum_{I D=1}^{2000}$ Mathematics $_{I D}$
+    \item $q_{2}=\max _{I D \in[1,2000]}$ English $_{I D}$
+\end{enumerate}
+\begin{solution}
+    \begin{enumerate}\item $q_{1}=\frac{1}{2000} \sum_{I D=1}^{2000}$ Mathematics $_{I D}=\frac{100}{2000}=0.05$
+        \item $q_{2}=\max _{I D \in[1,2000]}$ English $_{I D} =100$
+    \end{enumerate}
+\end{solution}
+\subsection{}
+Design $\epsilon$ -differential privacy mechanisms corresponding to the two queries in $2.1$ where $\epsilon=0.1 .$ (Using Laplace mechanism for $q_{1}$, Exponential mechanism for $q_{2} .$ )
+\begin{solution}
+    \begin{enumerate}\item \par$$q_{1}=\frac{1}{2000} \sum_{I D=1}^{2000} Mathematics _{I D} + Y$$
+              where $Y$ is random variable drawn from $Lap\left(0.5\right)$
+        \item Output $y$ with probability $\propto exp\left( \frac{0.1*u(x,y) }{2*100}\right)$, $y=q_{2}$
+    \end{enumerate}
+\end{solution}
+\subsection{}
+Let $M_{1}, M_{2}, \ldots, M_{100}$ be 100 Gaussian mechanisms that satisfy $\left(\epsilon_{0}, \delta_{0}\right)-\mathrm{DP}$, respectively, with respect to the database. Given $(\epsilon, \delta)=\left(1.25,10^{-5}\right)$, calculate $\sigma$ for every query with the composition theorem (Theorem $3.16$ in the textbook) and the advanced composition theorem (Theorem $3.20$ in the textbook, choose $\delta^{\prime}=\delta$ ) such that the total query satisfies $(\epsilon, \delta)$ - DP.
+\begin{solution}
+    \begin{enumerate}
+        \item $$\sum{k=1}{100}\epsilon_{0}=1.25,\sum{k=1}{100}\delta_{0}=10^{-5} $$
+              $$\epsilon_{0}=0.0125,\delta_{0}=10^{-7}$$
+        \item $$k\delta_{0} + \delta_{0}=10^{-5}$$
+              $$\epsilon_{0}=\frac{1.25}{2\sqrt{2k ln(\frac{1}{\delta_{0}})}}$$
+              $$\delta_{0}=9.9\times10^{-8}$$
+              $$\epsilon_{0}=0.011$$
+    \end{enumerate}
+\end{solution}
+\section{Local DP}
+
+This question focuses on the problem of estimating the mean value of a numeric attributes by collecting data from individuals under $\epsilon$ -LDP. Assume that each user $u_{i}$ 's data record $t_{i}$ contains a single numeric attribute whose value lies in range $[-1,1]$. Answer the following questions.
+\subsection{}
+Prove that Algorithm 1 satisfies $\epsilon$ -LDP.
+\begin{proof}
+    $$l(t_{i})=\frac{e^{\epsilon/2}t_{i}-1}{e^{\epsilon/2}-1}$$
+    $$r(t_{i})=\frac{e^{\epsilon/2}t_{i}+1}{e^{\epsilon/2}-1}$$
+    $\forall t_{i},t_{j}\in[-1,1]$
+    $$Pr[f(t_{i})=t^{*}]=\frac{(e^{\epsilon/2}-1)e^{\epsilon/2}}{2(e^{\epsilon/2}+1)},t^{*}
+        \in [l(t_{i}),r(t_{i})]$$
+    $$Pr[f(t_{i})=t^{*}]=\frac{(e^{\epsilon/2}-1)}{2(e^{\epsilon/2}+1)e^{\epsilon/2}},t^{*}
+        \in [-C,l(t_{i})]\cup [r(t_{i}),C]$$
+    Thus,
+    $$
+        \operatorname{Pr}\left[f(t_{i})=t^{*}\right] \leq \exp (\epsilon) \cdot \operatorname{Pr}\left[f\left(t_{j}\right)=t^{*}\right]
+    $$
+\end{proof}
+\subsection{}
+Prove that given an input value $t_{i}$, Algorithm 1 returns a noisy value $t_{i}^{*}$ with $\mathbb{E}\left[t_{i}^{*}\right]=t_{i}$ and $\operatorname{Var}\left[t_{i}^{*}\right]=\frac{t_{i}^{2}}{e^{\epsilon / 2}-1}+\frac{e^{\epsilon / 2}+3}{3\left(e^{\epsilon / 2}-1\right)^{2}}$
+\begin{proof}
+    $$E[t_{i}^{*}]=\int_{-C}^{l(t_{i})}x\frac{(e^{\epsilon/2}-1)}{2(e^{\epsilon/2}+1)e^{\epsilon/2}}dx+\int_{r(t_{i})}^{C}x\frac{(e^{\epsilon/2}-1)}{2(e^{\epsilon/2}+1)e^{\epsilon/2}}dx+\int_{l(t_{i})}^{r(t_{i})}
+        x\frac{(e^{\epsilon/2}-1)e^{\epsilon/2}}{2(e^{\epsilon/2}+1)}dx=t^{*}$$
+    $$\begin{aligned}Var[t_{i}^{*}]= & E[(t_{i}^{*})^2]-(E[t_{i}^{*}])^2                                                                    \\
+            =               &
+            \int_{-C}^{l(t_{i})}x^{2}\frac{(e^{\epsilon/2}-1)}{2(e^{\epsilon/2}+1)e^{\epsilon/2}}dx+\int_{r(t_{i})}^{C}x^{2}\frac{(e^{\epsilon/2}-1)}{2(e^{\epsilon/2}+1)e^{\epsilon/2}}dx+\int_{l(t_{i})}^{r(t_{i})}
+            x^{2}\frac{(e^{\epsilon/2}-1)e^{\epsilon/2}}{2(e^{\epsilon/2}+1)}dx-(t^{*})^2                                          \\
+            =               & \frac{t_{i}^{2}}{e^{\epsilon / 2}-1}+\frac{e^{\epsilon / 2}+3}{3\left(e^{\epsilon / 2}-1\right)^{2}}\end{aligned}$$
+
+\end{proof}
+\section{Random Subsampling}
+Given a dataset $x \in \mathcal{X}^{n}$, and $m \in\{0,1, \ldots, n\}$, a random $m$ -sumsample of $x$ is a new (random) dataset $x^{\prime} \in \mathcal{X}^{m}$ formed by keeping a random subset of $\mathrm{m}$ rows from $x$ and throwing out the remaining $n-m$ rows.
+\subsection{}
+Show that for every $n \in \mathbb{N}, \mathcal{X} \geq 2, m \in\{1, \ldots, n\}, \epsilon>0$ and $\delta<m / n$
+the mechanism $M(x)$ that outputs a random $m$ -subsample of $x \in \mathcal{X}^{n}$ is not $(\epsilon, \delta)-\mathrm{DP}$
+\begin{proof}
+    Let $\mathcal{X}=\{0,1\}$ and consider the two datasets $x=0^{n}$ and $x^{\prime}=10^{n-1} .$ Now define $S=\{z \in$ $\left.\{0,1\}^{m} \mid z \neq 0^{m}\right\}$. Then for every $\epsilon$ and every $\delta<m / n$
+    $$
+        e^{\varepsilon} \operatorname{Pr}[A(x) \in S]+\delta=\delta<\frac{m}{n}=\operatorname{Pr}\left[A\left(x^{\prime}\right) \in S\right]
+    $$
+    contradicting $(\varepsilon, \delta)-\mathrm{d} \mathrm{p}$ of $M$.
+\end{proof}
+\subsection{}
+Although random subsamples do not ensure differential privacy on their own, a random subsample dose have the effect of "amplifying" differential privacy. Let $M: \mathcal{X}^{m} \rightarrow \mathcal{R}$ be any algorithm. We define the algorithm $M^{\prime}: \mathcal{X}^{n} \rightarrow \mathcal{R}$ as
+follows: choose $x^{\prime}$ to be a random $m$ -subsample of $\mathrm{x}$, then output $M\left(x^{\prime}\right)$. Prove that if $M$ is $(\epsilon, \delta)$ -DP, then $M^{\prime}$ is $\left(\left(e^{\epsilon}-1\right) \cdot m / n, \delta m / n\right)$ -DP. Thus, if we have an algorithm with the relatively weak guarantee of 1 -DP, we can get an algorithm with $\epsilon$ -DP by using a random subsample of a database that is larger by a factor of $1 /\left(e^{\epsilon}-1\right)=O(1 / \epsilon)$.
+\begin{proof}
+    We'll use $T \subseteq\{1, \ldots, n\}$ to denote the identities of the $m$ -subsampled rows (i.e. their row number, not their actual contents). Note that $T$ is a random variable, and that the randomness of $M^{\prime}$ includes both the randomness of the sample $T$ and the random coins of
+    M. Let $x \sim x^{\prime}$ be adjacent databases and assume that $x$ and $x^{\prime}$ differ only on some row $t$. Let $x_{T}$ (or $x_{T}^{\prime}$ ) be a subsample from $x$ (or $x^{\prime}$ ) containing the rows in $T$. Let $S$ be an arbitrary subset of the range of $M^{\prime} .$ For convenience, define $p=m / n$ To show $\left(p\left(e^{\varepsilon}-1\right), p \delta\right)-\mathrm{dp}$, we have to bound the ratio
+    $$
+        \frac{\operatorname{Pr}\left[M^{\prime}(x) \in S\right]-p \delta}{\operatorname{Pr}\left[M^{\prime}\left(x^{\prime}\right) \in S\right]}=\frac{p \operatorname{Pr}\left[M\left(x_{T}\right) \in S \mid i \in T\right]+(1-p) \operatorname{Pr}\left[M\left(x_{T}\right) \in S \mid i \notin T\right]-p \delta}{p \operatorname{Pr}\left[M\left(x_{T}^{\prime}\right) \in S \mid i \in T\right]+(1-p) \operatorname{Pr}\left[M\left(x_{T}^{\prime}\right) \in S \mid i \notin T\right]}
+    $$
+    by $e^{p\left(e^{\varepsilon}-1\right)}$. For convenience, define the quantities
+    $$
+        \begin{aligned}
+             & C=\operatorname{Pr}\left[M\left(x_{T}\right) \in S \mid i \in T\right]                                                                                     \\
+             & C^{\prime}=\operatorname{Pr}\left[M\left(x_{T}^{\prime}\right) \in S \mid i \in T\right]                                                                   \\
+             & D=\operatorname{Pr}\left[M\left(x_{T}\right) \in S \mid i \notin T\right]=\operatorname{Pr}\left[M\left(x_{T}^{\prime}\right) \in S \mid i \notin T\right]
+        \end{aligned}
+    $$
+    We can rewrite the ratio as
+    $$
+        \frac{\operatorname{Pr}\left[M^{\prime}(x) \in S\right]}{\operatorname{Pr}\left[M^{\prime}\left(x^{\prime}\right) \in S\right]}=\frac{p C+(1-p) D-p \delta}{p C^{\prime}+(1-p) D}
+    $$
+    Now we use the fact that, by $(\varepsilon, \delta)$ -dp, $A \leq e^{\varepsilon} \min \left\{C^{\prime}, D\right\}+\delta$. The rest is a calculation:
+    $$
+        \begin{aligned}
+                 & p C+(1-p) D-p \delta                                                                                                                                    \\
+            \leq & p\left(e^{\varepsilon} \min \left\{C^{\prime}, D\right\}+\delta\right)+(1-p) D-p \delta                                                                 \\
+            \leq & \left.p\left(\min \left\{C^{\prime}, D\right\}+\left(e^{\varepsilon}-1\right) \min \left\{C^{\prime}, D\right\}\right)+\delta\right)+(1-p) D-p \delta   \\
+            \leq & p\left(\min \left\{C^{\prime}, D\right\}+\left(e^{\varepsilon}-1\right)\left(p C^{\prime}+(1-p) D\right)+\delta\right)+(1-p) D-p \delta\\
+            &(Because \min \{x, y\} \leq \alpha x+(1-\alpha) y\ for\ every\ 0 \leq \alpha \leq 1 )                                                                         \\
+            \leq & p\left(C^{\prime}+\left(e^{\varepsilon}-1\right)\left(p C^{\prime}+(1-p) D\right)+\delta\right)+(1-p) D-p \delta \quad
+            ( Because\ \min \{x, y\} \leq x) \\
+            \leq & p\left(C^{\prime}+\left(e^{\varepsilon}-1\right)\left(p C^{\prime}+(1-p) D\right)\right)+(1-p) D                                                        \\
+            \leq & \left(p C^{\prime}+(1-p) D\right)+\left(p\left(e^{\varepsilon}-1\right)\right)\left(p C^{\prime}+(1-p) D\right)                                         \\
+            \leq & \left(1+p\left(e^{\varepsilon}-1\right)\right)\left(p C^{\prime}+(1-p) D\right)                                                                         \\
+            \leq & e^{p\left(e^{\varepsilon}-1\right)}\left(p C^{\prime}+(1-p) D\right)\end{aligned}$$
+    So we've succeeded in bounding the necessary ratio of probabilities. Note, if you are willing to settle for $(\mathrm{O}(\mathrm{cm} / \mathrm{n}), \mathrm{O}(\delta m / \mathrm{n}))-\mathrm{d} \mathrm{p}$ the calculation is much simpler. All this algebra is mostly just to get the tight bound.
+\end{proof}
+\end{document}

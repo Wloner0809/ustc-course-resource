@@ -1,0 +1,13 @@
+data/
+__pycache__/
+results/
+compare_diff_adamw
+compare_diff_adamw_retrain
+compare_diff_sgd
+compare_diff_sgd_retrain
+compare_diff_lbfgs
+model_adamw.pth
+model_adamw_retrain.pth
+model_sgd.pth
+model_lbfgs.pth
+model_sgd_retrain.pth

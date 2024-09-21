@@ -1,0 +1,5 @@
+col2	col4
+a	apple 2020/1/1
+b	banana 2020/1/2
+c	orange 2020/1/5
+d	lemon 2020/1/7

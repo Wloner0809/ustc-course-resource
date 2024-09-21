@@ -1,0 +1,20 @@
+2023-12-24 14:39:15,434 - root - INFO - Namespace(seed=2022, data_name='Douban', data_dir='data/', cuda=False, gpu_id=0, use_pretrain=0, pretrain_model_path='trained_model/Douban/Embedding_based.pth', cf_batch_size=1024, kg_batch_size=2048, test_batch_size=2048, embed_dim=32, relation_dim=32, KG_embedding_type='TransE', kg_l2loss_lambda=0.0001, cf_l2loss_lambda=0.0001, lr=0.01, n_epoch=1000, stopping_steps=10, print_every=1, evaluate_every=10, Ks='[5, 10]', save_dir='trained_model/Douban/Embedding_based/dim32_lr0.01_l20.0001_TransE/')
+2023-12-24 14:39:59,924 - root - INFO - n_users:      447
+2023-12-24 14:39:59,924 - root - INFO - n_items:      578
+2023-12-24 14:39:59,924 - root - INFO - n_entities:   103041
+2023-12-24 14:39:59,924 - root - INFO - n_relations:  220
+2023-12-24 14:39:59,925 - root - INFO - n_cf_train:   41830
+2023-12-24 14:39:59,925 - root - INFO - n_cf_test:    10840
+2023-12-24 14:39:59,925 - root - INFO - n_kg_data:    1089288
+2023-12-24 14:40:00,000 - root - INFO - Embedding_based(
+  (user_embed): Embedding(447, 32)
+  (item_embed): Embedding(578, 32)
+  (entity_embed): Embedding(103041, 32)
+  (relation_embed): Embedding(220, 32)
+)
+2023-12-24 14:40:00,722 - root - INFO - KG & CF Training: Epoch 0001 Iter 0001 / 0041 | Time 0.4s | Iter Loss 1.4478 | Iter Mean Loss 1.4478
+2023-12-24 14:40:00,843 - root - INFO - KG & CF Training: Epoch 0001 Iter 0002 / 0041 | Time 0.1s | Iter Loss 1.0605 | Iter Mean Loss 1.2542
+2023-12-24 14:40:00,958 - root - INFO - KG & CF Training: Epoch 0001 Iter 0003 / 0041 | Time 0.1s | Iter Loss 1.0062 | Iter Mean Loss 1.1715
+2023-12-24 14:40:01,061 - root - INFO - KG & CF Training: Epoch 0001 Iter 0004 / 0041 | Time 0.1s | Iter Loss 0.9694 | Iter Mean Loss 1.1210
+2023-12-24 14:40:01,163 - root - INFO - KG & CF Training: Epoch 0001 Iter 0005 / 0041 | Time 0.1s | Iter Loss 0.9487 | Iter Mean Loss 1.0865
+2023-12-24 14:40:01,277 - root - INFO - KG & CF Training: Epoch 0001 Iter 0006 / 0041 | Time 0.1s | Iter Loss 0.9257 | Iter Mean Loss 1.0597
